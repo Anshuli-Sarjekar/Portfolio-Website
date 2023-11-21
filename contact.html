@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Anshuli Sarjekar - Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Anshuli's Porfolio Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects & Publications</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="extra.html">Extracurricular Activities</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-section" id="contact">
+        <h2>Contact Me</h2>
+        <br>
+        <div class="contact-details">
+            <div class="contact-info">
+                <p><strong>Personal Email:</strong> sarjekaranshuli@gmail.com</p>
+                <p><strong>University Mail:</strong> f20171030P@alumni.bits-pilani.ac.in</p>
+                <p><strong>Mobile (Work):</strong> +91-7240356222</p>
+            </div>
+            <div class="social-links">
+                <h3>Connect with Me:</h3>
+                <a href="https://www.linkedin.com/in/anshuli-sarjekar-36b242297/" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn Logo" class="social-icon">
+                </a>
+                <a href="https://github.com/yourusername" target="_blank">
+                    <img src="github.png" alt="GitHub Logo" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Send Me a Message</h3>
+            <form name = "submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows = "3" placeholder="Your Message" required></textarea>
+                <button type="submit" name="submit">Send</button>
+            </form>            
+        </div>
+    </div> 
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxymeQRJmJ0t-mkBDQqs0_anckvtjUOlE3rt-YR2xno7RWdYtIxJ-WJlIa1Sg-RqPsPPQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
